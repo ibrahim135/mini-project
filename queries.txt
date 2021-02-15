@@ -1,0 +1,126 @@
+CREATE TABLE adress (aid int(3),
+                     mobile int(10),
+                     pincode varchar(10),
+                     city varchar(20),
+                     state varchar(20),
+                     PRIMARY KEY(aid));
+
+CREATE TABLE catagoery(cid int(3),cname varchar(20),PRIMARY KEY(cid));
+
+CREATE TABLE limages(id int(5) NOT NULL AUTO_INCREMENT,
+                    url longtext NOT NULL ,primary key(id));
+
+CREATE TABLE fimages(id int(5) NOT NULL AUTO_INCREMENT,
+                    url longtext NOT NULL ,primary key(id));
+create TABLE fthings(id int(5),
+                     catagoery VARchar(20),
+                     discription VARchar(100),
+                     adressid int(3),
+                     pincode int(10),
+                     uemail varchar(20),
+                     imgid int(5),
+                     PRIMARY KEY(id),
+                     FOREIGN KEY(uemail) REFERENCES user(email),
+                     FOREIGN KEY (adressid) REFERENCES adress(aid)
+                    ,FOREIGN KEY (imgid) REFERENCES fimages(id));
+
+create TABLE lthings(id int(5),
+                     catagoery VARchar(20),
+                     discription VARchar(100),
+                     adressid int(3),
+                     pincode int(10),
+                     uemail varchar(20),
+                     imgid int(5),
+                     PRIMARY KEY(id),
+                     FOREIGN KEY(uemail) REFERENCES user(email),
+                     FOREIGN KEY (adressid) REFERENCES adress(aid)
+                    ,FOREIGN KEY (imgid) REFERENCES limages(id));
+
+
+trigger
+
+    CREATE TRIGGER `lcount` AFTER INSERT ON `lthings` FOR EACH ROW
+    UPDATE `user` SET `posts`=`posts`+1 WHERE `email`=new.`uemail`;
+
+     CREATE TRIGGER `fcount` AFTER INSERT ON `fthings` FOR EACH ROW
+     UPDATE `user` SET `posts`=`posts`+1 WHERE `email`=new.`uemail`
+
+     CREATE TRIGGER `lostpostdel` AFTER DELETE ON `lthings` FOR EACH ROW
+     UPDATE `user` SET `posts`=`posts`-1 WHERE `email`=old.`uemail`
+
+
+
+     CREATE TRIGGER `foundpostdel` AFTER DELETE ON `fthings` FOR EACH ROW
+     UPDATE `user` SET `posts`=`posts`-1 WHERE `email`=old.`uemail`
+
+     CREATE TRIGGER `lostpostdel` AFTER DELETE ON `lthings` FOR EACH ROW BEGIN
+     UPDATE `user` SET `posts`=`posts`-1 WHERE `email`=old.`uemail`;
+
+               DELETE FROM `limages` WHERE `id`=old.`imgid`;
+
+               DELETE FROM `adress` WHERE `aid`=old.`adressid`;
+
+     END
+
+
+     CREATE TRIGGER `foundpostdel` AFTER DELETE ON `fthings` FOR EACH ROW BEGIN
+          UPDATE `user` SET `posts`=`posts`-1 WHERE `email`=old.`uemail`;
+
+                    DELETE FROM `fimages` WHERE `id`=old.`imgid`;
+
+                    DELETE FROM `adress` WHERE `aid`=old.`adressid`;
+
+     END
+
+
+     CREATE TRIGGER `userdel` AFTER DELETE ON `user` FOR EACH ROW BEGIN
+
+     	DELETE FROM `fthings` WHERE `uemail`=old.`email`;
+         DELETE FROM `lthings` WHERE `uemail`=old.`email`;
+
+     END
+
+     ////
+
+     CREATE TRIGGER `fcount` AFTER INSERT ON `fthings`
+      FOR EACH ROW UPDATE `user` SET `posts`=`posts`+1 WHERE `email`=new.`uemail`
+
+     CREATE TRIGGER `foundpostdel` AFTER DELETE ON `fthings`
+      FOR EACH ROW BEGIN
+          UPDATE `user` SET `posts`=`posts`-1 WHERE `email`=old.`uemail`;
+
+                    DELETE FROM `fimages` WHERE `id`=old.`imgid`;
+
+                    DELETE FROM `adress` WHERE `aid`=old.`adressid`;
+
+     END
+
+     CREATE TRIGGER `userdel` AFTER DELETE ON `user`
+      FOR EACH ROW BEGIN
+
+     	DELETE FROM `fthings` WHERE `uemail`=old.`email`;
+         DELETE FROM `lthings` WHERE `uemail`=old.`email`;
+
+     END
+
+     CREATE TRIGGER `lcount` AFTER INSERT ON `lthings`
+      FOR EACH ROW UPDATE `user` SET `posts`=`posts`+1 WHERE `email`=new.`uemail`
+
+     CREATE TRIGGER `lostpostdel` AFTER DELETE ON `lthings`
+      FOR EACH ROW BEGIN
+     UPDATE `user` SET `posts`=`posts`-1 WHERE `email`=old.`uemail`;
+
+               DELETE FROM `limages` WHERE `id`=old.`imgid`;
+
+               DELETE FROM `adress` WHERE `aid`=old.`adressid`;
+
+     END
+
+
+
+
+
+     CREATE DEFINER=`root`@`localhost` PROCEDURE `userCount`(OUT `counts` INT)
+         NO SQL
+     select count(*) into counts from user
+
