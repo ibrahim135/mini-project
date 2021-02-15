@@ -1,0 +1,40 @@
+body {
+    height: 100%;
+    margin: 0px;
+    background-color: rgba(33, 150, 243, 0.82);
+}
+html {
+    display: table;
+    margin: 0 auto;
+}
+
+.profile-image-login{
+    width:100px;
+    height: 110px !important;
+}
+.login-form{
+    width: 400px;
+    height: 50%;
+    margin: 0 auto;
+}
+.valign{
+    width: 100px;
+    height: 100px;
+
+}
+.main{
+    width: 500px !important;
+    margin: 0 auto;
+
+}
+#login-page{
+    margin: 0 auto;
+}
+.card1{
+    margin-top: 30px;
+    margin-bottom: 0px;
+    height: 100%;
+}
+.rowx{
+    margin-bottom:0px;
+}

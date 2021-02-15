@@ -1,0 +1,16 @@
+.card1{
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+}
+.valign{
+    width: 100px;
+    height: 100px;
+}
+html{
+    margin: 0;
+    display: block;
+}
+body{
+    background-color: #424242;
+}

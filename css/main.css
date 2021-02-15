@@ -1,0 +1,186 @@
+.loggeduser{
+
+    width: 100%;
+    overflow: hidden;
+}
+.nomarg{
+    margin: 0px;
+    padding: 0px;
+}
+.sim{
+    width:50px;
+    height: 65px;
+    padding: 10px;
+}
+.logo{
+    width: 135px;
+    height: 50px;
+    margin-top: 10px;
+}
+.maindrop{
+    margin-top: 60px;
+}
+.dropli{
+    margin: 0px;
+    padding: 0px;
+}
+.topbg{
+
+    min-height: 600px;
+
+}
+.xx{
+    margin-bottom: 0px;
+    margin-bottom: 0px;
+}
+.logo{
+    margin-left: 50px;
+
+}
+.below{
+    min-height: 300px;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.tagline{
+    text-transform: capitalize;
+    font-size: 150%;
+    margin-left: 50px;
+}
+.tagimg{
+    width: 280px;
+    height: 280px;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 50px;
+}
+.tagtag{
+    font-family  : "Sitka Small";
+    font-size: larger;
+}
+.tagsub{
+    font-family: Ebrima;
+}
+.postpage{
+    margin-left: 100px;
+    margin-top: 10px;
+
+}
+
+
+.report{
+  padding-left: 25px;
+}
+.postcard{
+    margin-left: 40px;
+    margin-top: 0px;
+    border-radius:20px;
+
+}
+.btn{
+    border-radius: 5px;
+}
+.postcontainer{
+    margin-top: 20px;
+    margin-right: 3%;
+    border-radius: 20px;
+}
+#posts{
+
+
+}
+.losttitle{
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    padding: 20px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background: rgb(255, 60, 84);
+    border-bottom-right-radius: 15px;
+}
+.foundtitle{
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    padding: 20px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background: #00897b;
+    border-bottom-right-radius: 15px;
+}
+.knoww{
+    color: #fff;
+
+    max-width: 100%;
+    background: #00897b;
+    border-radius: 0px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin: 0px;
+    padding: 0px;
+
+    width: 100%;
+}
+
+.btn-grad {background-image: linear-gradient(to right, #2b82ff 0%, #3e89fa 51%, #269aff 100%)}
+.cc{
+    padding: 0px;!important;
+}
+
+.grad {
+    background-image:  linear-gradient(to right, #EB3349 0%, #F45C43 51%, #EB3349 100%);
+}
+.puser{
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+   left: 0;
+    max-width: 100%;
+    padding: 20px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    border-bottom-right-radius: 15px;
+}
+.pusertext{
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    background: #24c7ff;
+    left: 50px;
+    max-width: 100%;
+    padding: 20px;
+    padding-left: 20px;
+    margin-bottom: 13px;
+    padding-bottom: 0px;
+    margin-top: 2px;
+    padding-top: 0px;
+    font-size: small;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-image: linear-gradient(to right, #079cff 0%, #4673ff 51%, rgba(84, 103, 254, 0.89) 100%);
+
+
+}
+.ca{
+    position: absolute;
+    bottom: 0;
+}
+.profilev{
+
+    margin-top: 2px;
+    border-radius: 25px;
+    width:800px;
+
+
+}
