@@ -1,8 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: nishan
- * Date: 22-11-2017
+ * Created by Php.
+ * Date: 22-11-2021
  * Time: 05:49 PM
  */
 require("config.php");
@@ -14,9 +13,9 @@ if (isset($_GET['id'])) {
     $type = $_GET['type'];
     global $conn;
     if ($type == "lost") {
-        $sql = "SELECT `discription`,`cat_ref`, `adressid`, `pincode`, `uemail`, `imgid`, `postdate`,`draft` FROM `lthings` WHERE `id`=$id";
+        $sql = "SELECT `discription`,`cat_ref`, `adressid`, `pincode`, `uemail`, `imgid`, `postdate`,`draft` FROM `db_lostandfound`.`lthings` WHERE `id`=$id";
     } else {
-        $sql = "SELECT `discription`,`cat_ref`, `adressid`, `pincode`, `uemail`, `imgid`, `postdate` ,`draft` FROM `fthings` WHERE `id`=$id";
+        $sql = "SELECT `discription`,`cat_ref`, `adressid`, `pincode`, `uemail`, `imgid`, `postdate` ,`draft` FROM `db_lostandfound`.`fthings` WHERE `id`=$id";
     }
     $row = mysqli_fetch_array(mysqli_query($conn, $sql));
 
