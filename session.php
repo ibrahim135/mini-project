@@ -1,9 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: nishan
  * Date: 03-10-2017
- * Time: 10:06 PM
  */
 require("config.php");
 session_start();
