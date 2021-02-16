@@ -1,9 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: nishan
- * Date: 03-10-2017
- * Time: 09:01 PM
+ * Date: 03-10-2021
  */
 require ("config.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
