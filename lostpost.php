@@ -1,9 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: nishan
- * Date: 18-11-2017
- * Time: 02:31 PM
+ * Date: 18-11-2021
  */
 require("config.php");
 require("session.php");
